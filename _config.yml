@@ -1,51 +1,39 @@
-name:               "Ink"
-description:        "A minimalistic jekyll theme for humans"
+# Site settings
+name: Less Or More
+email: luoyan35714@126.com
+author: Freud Kang
+url: http://www.hifreud.com
+resume_site: http://www.hifreud.com/Resume.io/
+github: https://github.com/luoyan35714/
+baseurl: "/LessOrMore"
+description: Actually, less is more!
+meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
+motto: It's our wits that make us men.
+banner: 学而不思则罔，思而不学则殆。
 
-url:                ""
-author:             "北方的秋天"
-email:              "18700515157@163.com"
-gravatar_hash:      "205e460b479e2e5b48aec07710c08d50"
-twitter:            "北方的秋天"
-email:              "18700515157@163.com"
-github:             ""
-pinterest:          ""
-linkedin:           ""
-facebook:           ""
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
 
-disqus_shortname:   "北方的秋天"
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-background:         "http://apple.wallpapersfine.com/wallpapers/original/1242x2208/w-5273.jpg"
+github_username: luoyan35714
+highlighter: Pygments
 
-paginate:           5
-paginate_path:      "/page:num/"
+# Build settings
+markdown: kramdown
 
-baseurl:            ""
-permalink:          /:year/:month/:day/:title/
+baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
 
-markdown:           kramdown
-
-nav:
-  - name:           "About"
-    href:           "/about"
-  - name:           "Download"
-    href:           "/releases"
-
-sass:
-  style:            :compressed
-
-defaults:
-  -
-    scope:
-      path:         ""
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      path:         ""
-      type:         "posts"
-    values:
-      layout:       "post"
-
-gems:
-  - jekyll-paginate
+FB:
+  comments :
+    provider : yungentie
+    duoshuo:
+        short_name : luoyan35714
+    disqus :
+        short_name : freudkang
+    # facebook :
+    #   appid : 123
+    #   num_posts: 5
+    #   width: 580
+    #   colorscheme: light
