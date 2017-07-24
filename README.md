@@ -1,55 +1,130 @@
-# jekyll-theme-EasyBook
+# Kiko Plus Theme
 
-Another Jekyll Blog Theme "EasyBook"
+![image](/images/image.png)
 
-Start blogging with a simple but powerful theme.
+You can see live demo [here](https://aweekj.github.io/Kiko-plus). This theme is inspired by [Kiko](http://github.com/gfjaru/Kiko) theme.
 
 ## Features
 
-- Everything Basic Jekyll has.
-- **Pagination** is enabled.
-- **Comments** using Disqus or 多说.
-- **TOC** makes reading easier.
-- **Profile** including your links and avatar on the sidebar.
-- *And more...*
+- Disqus comment system
+- Google analytics
+- Pagination support
+- Custom tags
+- SEO support
 
-## Install
 
-Read [Quick Guide] to learn how to install and publish.
+## Installation
 
-Read [Welcome to Jekyll and EasyBook][helloPost] and [Jekyll][jekyll] for further information.
+#### Method 1: new master's repository (The Best)
 
-**If need help, please:**
+1. First [fork](https://github.com/AWEEKJ/Kiko-plus/fork) it.
+2. Change your forked repository name _Kiko-plus_ to __USERNAME.github.io__ where __USERNAME__ is your github username.
+3. Access your new blog via [https://username.github.io](https://username.github.io).
+4. [See configuration](#configuration).
 
- - [**Read Wiki pages**](https://github.com/laobubu/jekyll-theme-EasyBook/wiki)
- - **Google it**
- - [**Submit an issue**](https://github.com/laobubu/jekyll-theme-EasyBook/issues/new)
+#### Method 2: gh-pages in existing repository
 
-## Donate
+1. Create a new branch called _gh-pages_ in the repository where you want to add a template [managing branches](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
+2. From command line run `git clone https://github.com/AWEEKJ/Kiko-plus.git` - this will clone _Kiko-plus_ template to your computer.
+3. Create new branch `git checkout -b gh-pages` where _gh-pages_ will be your branch name.
+4. Add remote, which is your repo from the first step, to your new branch `git remote add gh-pages https://github.com/<yourName>/<yourMaster>/gh-pages`. _yourName_ is your account name and _yourMaster_ is your repository.
+5. Push new branch to remote `git push gh-pages`.
+6. Update `_config.yml` file by changing `baseurl: "<branchName>"` _branchName_ is your branch name where _gh-pages_ resides. See [configuration](#configuration).
 
-Buy me a coffee if you find EasyBook useful for you :smiley:
+## Configuration
 
-Visit <http://laobubu.net/donate.html>
+All configuration is done via `_config.yml` file which you will find in your main repo folder. Change this `<something>` to yours.
 
-## Demo
+### Basic
 
-[laobubu's blog](http://blog.laobubu.net) | [empty site](http://laobubu.github.io/jekyll-theme-EasyBook)
+- Config your blog name.
 
-![Homepage](https://ooo.0o0.ooo/2016/02/11/56bc997c65daf.png)
+```yml
+name: <blog-name>
+```
+
+- These configuration in `author:` is for links to icons in footer. If you want to add more link icons, modify `_includes/footer.html` file.
+
+```yml
+author:
+  facebook:         your-id
+  twitter:          your-id
+  github:           your-id
+  linkedin:         your-id
+  medium:           your-id
+  tumblr:           your-id
+  email:            your-id@your-email.com
+```
+
+- Change copyright year and name in footer.
+
+```yml
+copyright:
+  year:             2017
+  name:             Kiko
+```
+
+### Google analytics
+
+- Change this to your Google Analytic ID.
+
+```yml
+google-analytics:
+  id:               "your-id"
+```
+
+### Disqus
+
+- Change this to your Disqus short name.
+
+```yml
+disqus:
+  id:               "your-id"
+```
+
+### URL
+
+- Config your domain.
+
+```yml
+url: "https://<your-name>.github.io"
+```
+
+- **NOTE** When if running locally, change url to 
+
+```yml
+url: "https://localhost:4000"
+```
+
+- Change this to your branch name where _gh-pages_ resides. 
+- **NOTE** apply only if you used __Method 2__ for installation.
+
+```yml
+baseurl: "/<branch-name>"
+```
+
+## Run in Local
+
+1. Download or clone your remote repository.
+2. Go inside folder. First, run `rake geminstall`. 
+3. Second, run `jekyll serve` or `rake preview`. This will build a website which you can access [https://localhost:4000](https://localhost:4000). Make sure that `url` in `_config.yml` file is `url: "https://localhost:4000"`. You need to have [Jekyll](https://jekyllrb.com/docs/installation/) installed to do this.
+
+## Rakefile Usage
+
+```bash
+# Create new post
+$ rake post title="A Title" [date="2015-08-16"] [tags="[tag1, tag2]"] 
+
+# Create new draft post
+$ rake draft title="A Title" [date="2015-08-16"] [tags="[tag1, tag2]"]
+
+# Install Jekyll Plugins. Do before running in local.
+$ rake geminstall
+
+# Run in Local
+$ rake preview
+```
 
 ## License
 
-```
-The MIT License (MIT)
-Copyright (c) 2016 laobubu
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
-
-[Quick Guide]: https://github.com/laobubu/jekyll-theme-EasyBook/wiki/Quick-Guide
-[helloPost]: http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello
-[jekyll]: http://jekyllrb.com/
+This theme is released under MIT License.
